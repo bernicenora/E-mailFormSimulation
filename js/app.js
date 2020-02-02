@@ -109,6 +109,7 @@ function sendMail(e){
         setTimeout(function(){
             sendEmailForm.reset();
             sendEmailImg.remove();
+            sendBtn.disabled = true;
         }, 5000);
     },3000);
 }
@@ -116,4 +117,5 @@ function sendMail(e){
 // Function to reset the Form
 function resetForm(){
     sendEmailForm.reset();
+    sendBtn.disabled = true;
 }
