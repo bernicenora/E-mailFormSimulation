@@ -22,7 +22,7 @@ function eventListeners(){
     message.addEventListener('blur', validateField);
 
     // Send e-mail and reset form
-    //sendBtn.addEventListener('click',)
+    sendEmailForm.addEventListener('submit', sendMail);
     resetBtn.addEventListener('click',resetForm);
 }
 
@@ -81,6 +81,22 @@ function validateEmail(field){
         field.style.borderBottomColor = 'red';
         field.classList.add('error');
     }
+}
+
+
+// Function to send e-mail
+function sendMail(e){
+    e.preventDefault();
+
+    //show the spinner
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'block';
+
+    // Hide the spinner and show the sent image
+    setTimeout(function(){
+        // Hide the spinner
+        spinner.style.display = 'none';
+    },3000);
 }
 
 // Function to reset the Form
